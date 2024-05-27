@@ -1,6 +1,7 @@
 "use client";
 
 import { use } from "react";
+import { api } from "@/trpc/react";
 
 import type { RouterOutputs } from "@acme/api";
 import { CreatePostSchema } from "@acme/db/schema";
@@ -16,8 +17,6 @@ import {
 } from "@acme/ui/form";
 import { Input } from "@acme/ui/input";
 import { toast } from "@acme/ui/toast";
-
-import { api } from "~/trpc/react";
 
 export function CreatePostForm() {
   const form = useForm({
