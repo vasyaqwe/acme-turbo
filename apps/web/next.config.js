@@ -7,7 +7,15 @@ createJiti(fileURLToPath(import.meta.url))("./src/env")
 /** @type {import("next").NextConfig} */
 const config = {
    reactStrictMode: true,
-
+   images: {
+      remotePatterns: [
+         {
+            protocol: "https",
+            hostname: "lh3.googleusercontent.com",
+            port: "",
+         },
+      ],
+   },
    /** Enables hot reloading for local packages without a build step */
    transpilePackages: ["@acme/api", "@acme/auth", "@acme/db", "@acme/ui"],
 

@@ -3,29 +3,35 @@
 import { useState } from "react"
 import { env } from "@/env"
 import {
+   MutationCache,
    QueryClient,
    QueryClientProvider,
-   defaultShouldDehydrateQuery,
 } from "@tanstack/react-query"
 import { loggerLink, unstable_httpBatchStreamLink } from "@trpc/client"
 import { createTRPCReact } from "@trpc/react-query"
 import SuperJSON from "superjson"
 
 import type { AppRouter } from "@acme/api"
+import { toast } from "@acme/ui/toast"
 
-export const createQueryClient = () =>
+const createQueryClient = () =>
    new QueryClient({
+      mutationCache: new MutationCache({
+         onSuccess: (res) => {
+            if (res && typeof res === "object" && "serverError" in res)
+               throw new Error(res.serverError as string)
+         },
+      }),
       defaultOptions: {
          queries: {
             // With SSR, we usually want to set some default staleTime
             // above 0 to avoid refetching immediately on the client
             staleTime: 1000 * 30,
          },
-         dehydrate: {
-            // include pending queries in dehydration
-            shouldDehydrateQuery: (query) =>
-               defaultShouldDehydrateQuery(query) ||
-               query.state.status === "pending",
+         mutations: {
+            onError: (err) => {
+               toast.error(err.message)
+            },
          },
       },
    })
@@ -41,7 +47,17 @@ const getQueryClient = () => {
    }
 }
 
-export const api = createTRPCReact<AppRouter>()
+export const api = createTRPCReact<AppRouter>({
+   overrides: {
+      useMutation: {
+         async onSuccess(opts) {
+            await opts.originalFn()
+            // Invalidate all queries in the react-query cache:
+            await opts.queryClient.invalidateQueries()
+         },
+      },
+   },
+})
 
 export function TRPCReactProvider(props: { children: React.ReactNode }) {
    const queryClient = getQueryClient()
@@ -68,14 +84,14 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
    )
 
    return (
-      <QueryClientProvider client={queryClient}>
-         <api.Provider
-            client={trpcClient}
-            queryClient={queryClient}
-         >
+      <api.Provider
+         client={trpcClient}
+         queryClient={queryClient}
+      >
+         <QueryClientProvider client={queryClient}>
             {props.children}
-         </api.Provider>
-      </QueryClientProvider>
+         </QueryClientProvider>
+      </api.Provider>
    )
 }
 

@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import { TRPCReactProvider } from "@/trpc/react"
-import { GeistMono } from "geist/font/mono"
-import { GeistSans } from "geist/font/sans"
+import { Inter } from "next/font/google"
 
 import { cn } from "@acme/ui"
 import { Toaster } from "@acme/ui/toast"
@@ -38,19 +37,16 @@ export const viewport: Viewport = {
    ],
 }
 
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+
 export default function RootLayout(props: { children: React.ReactNode }) {
    return (
       <html
          lang="en"
          suppressHydrationWarning
+         className={cn("font-primary text-base antialiased", inter.variable)}
       >
-         <body
-            className={cn(
-               "min-h-screen bg-background font-sans text-foreground antialiased",
-               GeistSans.variable,
-               GeistMono.variable
-            )}
-         >
+         <body className="bg-background text-foreground">
             <TRPCReactProvider>{props.children}</TRPCReactProvider>
             <Toaster />
          </body>

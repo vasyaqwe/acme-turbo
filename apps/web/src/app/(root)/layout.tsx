@@ -1,13 +1,13 @@
 import { Sidebar } from "@/app/(root)/_components/sidebar"
 import { ModalProvider } from "@/components/modals"
-import { HydrateClient, trpc } from "@/trpc/server"
+import { HydrateClient, api } from "@/trpc/server"
 
 export default async function RootLayout({
    children,
 }: Readonly<{
    children: React.ReactNode
 }>) {
-   void trpc.user.me()
+   void api.user.me()
 
    return (
       <HydrateClient>

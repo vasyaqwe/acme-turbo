@@ -1,4 +1,4 @@
-import { cn } from "@acme/ui"
+import { cn } from "."
 import { forwardRef, type ComponentProps } from "react"
 
 const Card = forwardRef<HTMLDivElement, ComponentProps<"div">>(

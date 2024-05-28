@@ -18,11 +18,7 @@ import { ExclamationCircleIcon } from "@heroicons/react/24/outline"
 import { formatCurrency } from "@/lib/utils"
 
 export function Expenses() {
-   const {
-      data: expenses,
-      isPending,
-      isError,
-   } = api.expense.getAll.useQuery(undefined, { staleTime: Infinity })
+   const { data: expenses, isPending, isError } = api.expense.getAll.useQuery()
 
    return (
       <Card className="mt-5 p-5 pt-4">
@@ -45,7 +41,7 @@ export function Expenses() {
                <TableBody>
                   {isPending ? (
                      <>
-                        {Array(6)
+                        {Array(10)
                            .fill(0)
                            .map((_, i) => (
                               <TableRow key={i}>

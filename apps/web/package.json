@@ -6,7 +6,7 @@
    "scripts": {
       "build": "pnpm with-env next build",
       "clean": "git clean -xdf .next .turbo node_modules",
-      "dev": "pnpm with-env next dev",
+      "dev": "pnpm with-env next dev --turbo",
       "format": "prettier --check . --ignore-path ../../.gitignore",
       "lint": "eslint",
       "start": "pnpm with-env next start",
@@ -19,7 +19,7 @@
       "@acme/db": "workspace:*",
       "@acme/ui": "workspace:*",
       "@t3-oss/env-nextjs": "^0.10.1",
-      "@tanstack/react-query": "^5.35.5",
+      "@tanstack/react-query": "^5.40.0",
       "@trpc/client": "11.0.0-alpha-tmp-app-router-example.364",
       "@trpc/react-query": "11.0.0-alpha-tmp-app-router-example.364",
       "@trpc/server": "11.0.0-alpha-tmp-app-router-example.364",

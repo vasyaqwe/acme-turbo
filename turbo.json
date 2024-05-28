@@ -58,6 +58,7 @@
     }
   },
   "globalEnv": [
-    "NEXT_PUBLIC_BASE_URL"
+    "NEXT_PUBLIC_BASE_URL",
+    "DATABASE_URL"
   ]
 }

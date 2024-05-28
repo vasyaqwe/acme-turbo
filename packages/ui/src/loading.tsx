@@ -1,4 +1,4 @@
-import { cn } from "@acme/ui"
+import { cn } from "."
 import { type ComponentProps } from "react"
 
 export function Loading({ className, ...props }: ComponentProps<"div">) {

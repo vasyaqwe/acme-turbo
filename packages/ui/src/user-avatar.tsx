@@ -1,9 +1,9 @@
 "use client"
 
-import { Avatar, AvatarFallback } from "@acme/ui/avatar"
+import { Avatar, AvatarFallback } from "./avatar"
 import Image from "next/image"
 import { type AvatarProps } from "@radix-ui/react-avatar"
-import { cn } from "@acme/ui"
+import { cn } from "."
 import { type User } from "@acme/db/schema/users"
 
 type UserAvatarProps = AvatarProps & {

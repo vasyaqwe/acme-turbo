@@ -13,7 +13,7 @@
       },
       "./client": {
          "types": "./dist/client.d.ts",
-         "default": "./src/client.t s"
+         "default": "./src/client.ts"
       },
       "./schema/*": {
          "types": "./dist/schema/*.d.ts",
@@ -37,6 +37,7 @@
       "@vercel/postgres": "^0.8.0",
       "drizzle-orm": "^0.30.10",
       "drizzle-zod": "^0.5.1",
+      "postgres": "^3.4.4",
       "zod": "^3.23.8"
    },
    "devDependencies": {

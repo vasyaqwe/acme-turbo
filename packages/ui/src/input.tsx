@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority"
 import { type InputHTMLAttributes, forwardRef } from "react"
-import { cn } from "@acme/ui"
+import { cn } from "."
 
 const inputVariants = cva(
    `block h-[37px] w-full rounded-md border px-3 transition placeholder:text-foreground/40 

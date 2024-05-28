@@ -47,7 +47,7 @@ export default function Page() {
                   <TableBody>
                      {isPending ? (
                         <>
-                           {Array(6)
+                           {Array(10)
                               .fill(0)
                               .map((_, i) => (
                                  <TableRow key={i}>

@@ -3,7 +3,7 @@
 import * as React from "react"
 import { OTPInput, OTPInputContext } from "input-otp"
 
-import { cn } from "@acme/ui"
+import { cn } from "."
 
 const InputOTP = React.forwardRef<
    React.ElementRef<typeof OTPInput>,

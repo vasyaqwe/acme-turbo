@@ -4,13 +4,13 @@ import { Link } from "@/components/link"
 import { buttonVariants } from "@acme/ui/button"
 import { UserAvatar } from "@acme/ui/user-avatar"
 import { api } from "@/trpc/react"
-import { cn } from "@acme/ui"
 import {
    CircleStackIcon,
    InboxStackIcon,
    RectangleGroupIcon,
 } from "@heroicons/react/24/outline"
 import { usePathname } from "next/navigation"
+import { cn } from "@acme/ui"
 
 export function Sidebar() {
    const pathname = usePathname()

@@ -18,8 +18,6 @@ export const env = createEnv({
     */
    server: {
       RESEND_API_KEY: z.string().min(1),
-
-      UNKEY_ROOT_KEY: z.string().min(1),
    },
 
    /**

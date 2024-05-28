@@ -1,5 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority"
-import { cn } from "@acme/ui"
+import { cn } from "."
 import { type ComponentProps, forwardRef } from "react"
 
 const buttonVariants = cva(
