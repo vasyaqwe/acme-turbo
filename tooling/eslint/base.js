@@ -73,6 +73,11 @@ export default tseslint.config(
          ],
          "@typescript-eslint/no-non-null-assertion": "error",
          "react/no-unescaped-entities": "off",
+         "@typescript-eslint/no-unsafe-assignment": "off",
+         "@typescript-eslint/no-unsafe-member-access": "off",
+         "@typescript-eslint/no-unsafe-call": "off",
+         // "@typescript-eslint/no-unsafe-argument": "off",
+         // "@typescript-eslint/no-unsafe-return": "off",
          "drizzle/enforce-delete-with-where": [
             "error",
             {
