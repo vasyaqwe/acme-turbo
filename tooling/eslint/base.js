@@ -35,7 +35,7 @@ export const restrictEnvAccess = tseslint.config({
 export default tseslint.config(
    {
       // Globally ignored files
-      ignores: ["**/*.config.*"],
+      ignores: ["**/*.config.*", "dist/"],
    },
    {
       files: ["**/*.js", "**/*.ts", "**/*.tsx"],
@@ -72,10 +72,6 @@ export default tseslint.config(
             },
          ],
          "@typescript-eslint/no-non-null-assertion": "error",
-         "import/consistent-type-specifier-style": [
-            "error",
-            "prefer-top-level",
-         ],
          "react/no-unescaped-entities": "off",
          "drizzle/enforce-delete-with-where": [
             "error",

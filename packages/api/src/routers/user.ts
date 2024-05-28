@@ -10,7 +10,7 @@ import {
    google,
    lucia,
 } from "@acme/auth"
-import { type db as database } from "@acme/db/client"
+import type { db as database } from "@acme/db/client"
 import {
    emailVerificationCodes,
    insertUserParams,
@@ -117,7 +117,7 @@ export const user = createTRPCRouter({
                }),
             })
 
-            if (res?.error)
+            if (res.error)
                throw new TRPCError({
                   code: "INTERNAL_SERVER_ERROR",
                   message: "An error occurred, couldn't send email",
@@ -163,11 +163,11 @@ const verifyVerificationCode = async (
          .from(emailVerificationCodes)
          .where(eq(emailVerificationCodes.userId, userId))
 
-      if (!databaseCode || databaseCode?.code !== code) {
+      if (!databaseCode || databaseCode.code !== code) {
          isValid = false
       }
 
-      if (databaseCode && !isWithinExpirationDate(databaseCode?.expiresAt)) {
+      if (databaseCode && !isWithinExpirationDate(databaseCode.expiresAt)) {
          isValid = false
       }
 
@@ -178,7 +178,7 @@ const verifyVerificationCode = async (
       return databaseCode
    })
 
-   if (isValid && databaseCode) {
+   if (databaseCode) {
       await db
          .delete(emailVerificationCodes)
          .where(eq(emailVerificationCodes.id, databaseCode.id))

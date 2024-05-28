@@ -11,7 +11,7 @@ import { db } from "@acme/db/client"
 import {
    emailVerificationCodes,
    sessions,
-   User,
+   type User,
    users,
 } from "@acme/db/schema/users"
 
