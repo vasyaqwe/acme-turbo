@@ -1,6 +1,7 @@
-import { sql } from "@vercel/postgres";
-import { drizzle } from "drizzle-orm/vercel-postgres";
+import { sql } from "@vercel/postgres"
+import { drizzle } from "drizzle-orm/vercel-postgres"
 
-import * as schema from "./schema";
+import * as expenses from "./schema/expenses"
+import * as users from "./schema/users"
 
-export const db = drizzle(sql, { schema });
+export const db = drizzle(sql, { schema: { ...expenses, ...users } })

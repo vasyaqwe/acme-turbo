@@ -1,10 +1,10 @@
-import baseConfig, { restrictEnvAccess } from "@acme/eslint-config/base";
+import globals from "globals";
+import tseslint from "typescript-eslint";
+import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 
-/** @type {import('typescript-eslint').Config} */
+
 export default [
-  {
-    ignores: ["dist/**"],
-  },
-  ...baseConfig,
-  ...restrictEnvAccess,
+  {languageOptions: { globals: globals.browser }},
+  ...tseslint.configs.recommended,
+  pluginReactConfig,
 ];

@@ -1,14 +1,14 @@
 import type { Config } from "drizzle-kit"
 
-if (!process.env.DATABASE_URL) {
+const url = process.env.DATABASE_URL
+
+if (!url) {
    throw new Error("Missing DATABASE_URL")
 }
 
-const nonPoolingUrl = process.env.DATABASE_URL.replace(":6543", ":5432")
-
 export default {
-   schema: "./src/schema.ts",
+   schema: "./src/schema/**/*.ts",
    dialect: "postgresql",
-   dbCredentials: { url: nonPoolingUrl },
-   tablesFilter: ["t3turbo_*"],
+   dbCredentials: { url },
+   tablesFilter: ["acme_*"],
 } satisfies Config

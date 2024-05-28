@@ -1,7 +1,6 @@
-import * as crypto from "crypto"
+import { randomUUID } from "crypto"
 import { pgTableCreator, timestamp, uuid } from "drizzle-orm/pg-core"
 
-export const randomUUID = crypto.randomUUID
 export const createTable = pgTableCreator((name) => `acme_${name}`)
 
 export const lifecycleDates = {
