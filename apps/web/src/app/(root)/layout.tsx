@@ -1,13 +1,15 @@
 import { Sidebar } from "@/app/(root)/_components/sidebar"
 import { ModalProvider } from "@/components/modals"
 import { HydrateClient, api } from "@/trpc/server"
+import { redirect } from "next/navigation"
 
 export default async function RootLayout({
    children,
 }: Readonly<{
    children: React.ReactNode
 }>) {
-   void api.user.me()
+   const session = await api.user.me()
+   if (!session) redirect("/login")
 
    return (
       <HydrateClient>

@@ -36,7 +36,7 @@ export function Sidebar() {
                         pathname === "/"
                            ? buttonVariants({ variant: "outline" })
                            : `${buttonVariants()} bg-transparent`,
-                        "hover:shadow-shadow w-full justify-start text-foreground backdrop-blur-md transition-all hover:bg-popover aria-[current=page]:hover:before:from-foreground/[0.015]"
+                        "w-full justify-start text-foreground backdrop-blur-md transition-all hover:bg-popover hover:shadow-shadow aria-[current=page]:hover:before:from-foreground/[0.015]"
                      )}
                      href={"/"}
                   >
@@ -50,7 +50,7 @@ export function Sidebar() {
                         pathname === "/whatever"
                            ? buttonVariants({ variant: "outline" })
                            : `${buttonVariants()} bg-transparent`,
-                        "hover:shadow-shadow w-full justify-start text-foreground backdrop-blur-md transition-all hover:bg-popover aria-[current=page]:hover:before:from-foreground/[0.015]"
+                        "w-full justify-start text-foreground backdrop-blur-md transition-all hover:bg-popover hover:shadow-shadow aria-[current=page]:hover:before:from-foreground/[0.015]"
                      )}
                      href={"/whatever"}
                   >
@@ -62,7 +62,7 @@ export function Sidebar() {
                   <Link
                      className={cn(
                         `${buttonVariants()} bg-transparent`,
-                        "hover:shadow-shadow w-full justify-start text-foreground backdrop-blur-md transition-all hover:bg-popover aria-[current=page]:hover:before:from-foreground/[0.015]"
+                        "w-full justify-start text-foreground backdrop-blur-md transition-all hover:bg-popover hover:shadow-shadow aria-[current=page]:hover:before:from-foreground/[0.015]"
                      )}
                      href={"/"}
                   >
