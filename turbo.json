@@ -11,6 +11,7 @@
     },
     "build": {
       "dependsOn": [
+        "push",
         "^build"
       ],
       "outputs": [
@@ -21,6 +22,9 @@
         ".output/**",
         ".vercel/output/**"
       ]
+    },
+    "push": {
+      "cache": false
     },
     "dev": {
       "persistent": true,
