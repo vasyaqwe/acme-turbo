@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-/* eslint-disable no-restricted-properties */
 import { drizzle } from "drizzle-orm/postgres-js"
 import postgres from "postgres"
 

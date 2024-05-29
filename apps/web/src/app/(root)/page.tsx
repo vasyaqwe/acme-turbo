@@ -15,16 +15,8 @@ import { Skeleton } from "@acme/ui/skeleton"
 import { ErrorBoundary } from "react-error-boundary"
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline"
 
-const fetchExpenses = async () => {
-   try {
-      void api.expense.getAll()
-   } catch (error) {
-      console.error(error)
-   }
-}
-
 export default function Page() {
-   void fetchExpenses()
+   void api.expense.getAll().catch()
 
    return (
       <div className="w-full py-6">
