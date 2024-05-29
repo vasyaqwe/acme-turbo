@@ -1,5 +1,4 @@
 import { Sidebar } from "@/app/(root)/_components/sidebar"
-import { ErrorBoundary } from "@/components/error-boundary"
 import { ModalProvider } from "@/components/modals"
 import { HydrateClient, api } from "@/trpc/server"
 import { redirect } from "next/navigation"
@@ -17,9 +16,7 @@ export default async function RootLayout({
          <ModalProvider />
          <div className="flex">
             <Sidebar />
-            <main className="flex-1 px-5 md:px-11">
-               <ErrorBoundary>{children}</ErrorBoundary>
-            </main>
+            <main className="flex-1 px-5 md:px-11">{children}</main>
          </div>
       </HydrateClient>
    )
