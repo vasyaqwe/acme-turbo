@@ -15,7 +15,7 @@ import { Skeleton } from "@acme/ui/skeleton"
 import { ErrorBoundary } from "react-error-boundary"
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline"
 
-function ExpensesComponent() {
+export default function Page() {
    void api.expense.getAll()
 
    return (
@@ -69,13 +69,5 @@ function ExpensesComponent() {
             </ErrorBoundary>
          </Card>
       </div>
-   )
-}
-
-export default function Page() {
-   return (
-      <ErrorBoundary fallback={<></>}>
-         <ExpensesComponent />
-      </ErrorBoundary>
    )
 }

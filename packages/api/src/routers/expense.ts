@@ -2,22 +2,28 @@ import { eq } from "drizzle-orm"
 
 import { expenses, insertExpenseParams } from "@acme/db/schema/expenses"
 
-import { createTRPCRouter, protectedProcedure } from "../trpc"
+import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc"
+import { TRPCError } from "@trpc/server"
 
 export const expense = createTRPCRouter({
-   getAll: protectedProcedure.query(async ({ ctx }) => {
-      const res = await ctx.db
-         .select()
-         .from(expenses)
-         .where(eq(expenses.userId, ctx.session.user.id))
+   getAll: publicProcedure.query(async ({ ctx }) => {
+      const user = ctx.session?.user
+      if (!user?.id) return []
 
-      return res
+      // const res = await ctx.db
+      //    .select()
+      //    .from(expenses)
+      //    .where(eq(expenses.userId, user.id))
+
+      throw new TRPCError({ code: "NOT_IMPLEMENTED" })
    }),
-   getAll2: protectedProcedure.query(async ({ ctx }) => {
+   getAll2: publicProcedure.query(async ({ ctx }) => {
+      const user = ctx.session?.user
+      if (!user?.id) return []
       const res = await ctx.db
          .select()
          .from(expenses)
-         .where(eq(expenses.userId, ctx.session.user.id))
+         .where(eq(expenses.userId, user.id))
 
       return res
    }),
