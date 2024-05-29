@@ -1,5 +1,6 @@
 import { Expenses } from "@/app/(root)/_components/expenses"
 import { Intro } from "@/app/(root)/_components/intro"
+import { api } from "@/trpc/server"
 import { Suspense } from "react"
 import {
    Table,
@@ -15,6 +16,12 @@ import { ErrorBoundary } from "react-error-boundary"
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline"
 
 export default function Page() {
+   try {
+      void api.expense.getAll()
+   } catch (error) {
+      console.error(error)
+   }
+
    return (
       <div className="w-full py-6">
          <Intro />
