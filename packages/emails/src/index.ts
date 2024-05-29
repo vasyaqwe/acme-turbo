@@ -1,4 +1,5 @@
 import { Resend } from "resend"
+import { env } from "./env"
 
 export const EMAIL_FROM = "Acme <acme@vasyldev.cc>"
-export const emails = new Resend(process.env.RESEND_API_KEY)
+export const emails = new Resend(env.RESEND_API_KEY)

@@ -1,10 +1,7 @@
 import type { Config } from "drizzle-kit"
+import { env } from "./src/env"
 
-const url = process.env.DATABASE_URL
-
-if (!url) {
-   throw new Error("Missing DATABASE_URL")
-}
+const url = env.DATABASE_URL
 
 export default {
    schema: "./src/schema/**/*.ts",

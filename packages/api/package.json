@@ -19,6 +19,7 @@
       "typecheck": "tsc --noEmit --emitDeclarationOnly false"
    },
    "dependencies": {
+      "@t3-oss/env-core": "^0.10.1",
       "@acme/auth": "workspace:*",
       "@acme/db": "workspace:*",
       "@acme/emails": "workspace:*",

@@ -14,6 +14,7 @@ import { ZodError } from "zod"
 import type { Session } from "@acme/auth"
 import { db } from "@acme/db/client"
 import { emails } from "@acme/emails"
+import { env } from "./env"
 
 /**
  * 1. CONTEXT
@@ -120,10 +121,8 @@ const getIp = (headers: Headers) => {
 
 export const publicRateLimitedProcedure = t.procedure.use(
    async ({ ctx, next, path }) => {
-      if (!process.env.UNKEY_ROOT_KEY) throw new Error("UNKEY_ROOT_KEY not set")
-
       const unkey = new Ratelimit({
-         rootKey: process.env.UNKEY_ROOT_KEY,
+         rootKey: env.UNKEY_ROOT_KEY,
          async: true,
          duration: "20s",
          limit: 2,
