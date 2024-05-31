@@ -4,7 +4,6 @@ import { Inter } from "next/font/google"
 
 import { cn } from "@acme/ui"
 import { Toaster } from "@acme/ui/toast"
-
 import "@/app/globals.css"
 
 import { env } from "@/env"

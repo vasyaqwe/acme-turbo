@@ -60,9 +60,5 @@
     "//#clean": {
       "cache": false
     }
-  },
-  "globalEnv": [
-    "NEXT_PUBLIC_BASE_URL",
-    "DATABASE_URL"
-  ]
+  }
 }

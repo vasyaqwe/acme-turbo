@@ -3,8 +3,8 @@ import { cn } from "."
 import { type ComponentProps, forwardRef } from "react"
 
 const buttonVariants = cva(
-   `shadow-button relative relative inline-flex items-center justify-center gap-1.5
-   overflow-hidden whitespace-nowrap font-medium
+   `relative relative inline-flex items-center justify-center gap-1.5 overflow-hidden
+   whitespace-nowrap font-medium shadow-button
    ring-offset-background transition-colors before:pointer-events-none 
    before:absolute before:inset-0 before:z-[1] before:bg-gradient-to-b before:from-background/[0.18]
     before:opacity-0 before:transition-opacity hover:before:opacity-100 focus-visible:outline-none 
@@ -14,7 +14,7 @@ const buttonVariants = cva(
          variant: {
             default: `bg-primary text-background`,
             accent: `bg-accent text-accent-foreground hover:bg-accent/80`,
-            outline: `shadow-shadow bg-popover before:from-foreground/[0.015] `,
+            outline: `bg-popover shadow-shadow before:from-foreground/[0.015] `,
             link: "!h-auto !rounded-none !p-0 underline before:hidden hover:no-underline",
          },
          size: {
