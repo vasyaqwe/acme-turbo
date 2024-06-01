@@ -16,7 +16,7 @@ import { ErrorBoundary } from "react-error-boundary"
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline"
 
 export default function Page() {
-   void api.expense.getAll()
+   void api.expense.getAll().catch((e) => console.error(e))
 
    return (
       <HydrateClient>
