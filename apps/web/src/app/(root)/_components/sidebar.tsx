@@ -21,6 +21,7 @@ export function Sidebar() {
       <aside className="w-72 p-6 max-md:hidden">
          <header className="flex items-center justify-between">
             <Link
+               prefetch
                href="/"
                className="text-2xl font-bold"
             >
@@ -32,6 +33,7 @@ export function Sidebar() {
             <ul className="flex flex-col gap-2">
                <li>
                   <Link
+                     prefetch
                      className={cn(
                         pathname === "/"
                            ? buttonVariants({ variant: "outline" })
@@ -46,6 +48,7 @@ export function Sidebar() {
                </li>
                <li>
                   <Link
+                     prefetch
                      className={cn(
                         pathname === "/whatever"
                            ? buttonVariants({ variant: "outline" })
@@ -60,6 +63,7 @@ export function Sidebar() {
                </li>
                <li>
                   <Link
+                     prefetch
                      className={cn(
                         `${buttonVariants()} bg-transparent`,
                         "w-full justify-start text-foreground backdrop-blur-md transition-all hover:bg-popover hover:shadow-shadow aria-[current=page]:hover:before:from-foreground/[0.015]"
