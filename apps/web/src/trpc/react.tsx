@@ -2,11 +2,7 @@
 
 import { useState } from "react"
 import { env } from "@/env"
-import {
-   MutationCache,
-   QueryClient,
-   QueryClientProvider,
-} from "@tanstack/react-query"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { loggerLink, unstable_httpBatchStreamLink } from "@trpc/client"
 import { createTRPCReact } from "@trpc/react-query"
 import SuperJSON from "superjson"
@@ -16,12 +12,6 @@ import { toast } from "@acme/ui/toast"
 
 const createQueryClient = () =>
    new QueryClient({
-      mutationCache: new MutationCache({
-         onSuccess: (res) => {
-            if (res && typeof res === "object" && "serverError" in res)
-               throw new Error(res.serverError as string)
-         },
-      }),
       defaultOptions: {
          queries: {
             // With SSR, we usually want to set some default staleTime
@@ -29,8 +19,14 @@ const createQueryClient = () =>
             staleTime: 1000 * 30,
          },
          mutations: {
-            onError: (err) => {
-               toast.error(err.message)
+            onError: (e) => {
+               const error = e as Error & { digest?: string | undefined }
+               //if server action, show generic message
+               if (error.digest) {
+                  toast.error("Something went wrong")
+               } else {
+                  toast.error(e.message)
+               }
             },
          },
       },

@@ -49,13 +49,4 @@ export const { trpc: api, HydrateClient } = createHydrationHelpers<
    typeof appRouter
 >(caller, getQueryClient)
 
-export const serverCaller = createCaller(createContext, {
-   onError: ({ error, type }) => {
-      if (type === "mutation")
-         return {
-            serverError: error.message,
-         }
-
-      throw error
-   },
-})
+export const serverCaller = createCaller(createContext)

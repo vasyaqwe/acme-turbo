@@ -33,3 +33,13 @@ export const delay = async <T>(promise: Promise<T>, ms: number) => {
       throw error
    }
 }
+
+export const action = <T, R>(
+   apiMethod: (input: T) => Promise<R>,
+   more?: (result: R) => void
+) => {
+   return async (input: T) => {
+      const result = await apiMethod(input)
+      more?.(result)
+   }
+}
