@@ -31,8 +31,9 @@ COPY --from=builder /app/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
 COPY --from=builder /app/out/full/ .
 COPY turbo.json turbo.json
 RUN pnpm install
-RUN SKIP_ENV_VALIDATION=1 pnpm build --filter=@acme/web...
-RUN pnpm db:push
+RUN --mount=type=secret,id=NEXT_PUBLIC_BASE_URL \
+    NEXT_PUBLIC_BASE_URL="$(cat /run/secrets/NEXT_PUBLIC_BASE_URL)" \
+    SKIP_ENV_VALIDATION=1 pnpm build --filter=@acme/web...
 
 # -------------------------- stage runner ---------------------------------
 FROM base AS runner
