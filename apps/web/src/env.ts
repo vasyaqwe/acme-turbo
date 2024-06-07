@@ -22,7 +22,7 @@ export const env = createEnv({
     * For them to be exposed to the client, prefix them with `NEXT_PUBLIC_`.
     */
    client: {
-      NEXT_PUBLIC_BASE_URL: z.string().url(),
+      NEXT_PUBLIC_BASE_URL: z.string().url().optional(),
    },
    /**
     * Destructure all variables from `process.env` to make sure they aren't tree-shaken away.
@@ -31,5 +31,5 @@ export const env = createEnv({
       NODE_ENV: process.env.NODE_ENV,
       NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
    },
-   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
+   skipValidation: true,
 })
