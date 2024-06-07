@@ -5,6 +5,13 @@ on:
       branches: ["fly"]
 
 jobs:
+   - name: Create env file
+        run: |
+          touch .env
+          echo NEXT_PUBLIC_BASE_URL=${{ secrets.NEXT_PUBLIC_BASE_URL }} >> .env
+          echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
+          echo RESEND_API_KEY=${{ secrets.RESEND_API_KEY }} >> .env
+          cat .env
    deploy:
       name: Deploy Web
       runs-on: ubuntu-latest
