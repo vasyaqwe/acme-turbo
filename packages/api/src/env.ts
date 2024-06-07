@@ -8,5 +8,5 @@ export const env = createEnv({
    runtimeEnvStrict: {
       UNKEY_ROOT_KEY: process.env.UNKEY_ROOT_KEY,
    },
-   skipValidation: !!process.env.CI || !!process.env.SKIP_ENV_VALIDATION,
+   skipValidation: true,
 })

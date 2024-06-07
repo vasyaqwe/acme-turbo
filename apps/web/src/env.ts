@@ -16,10 +16,7 @@ export const env = createEnv({
     * Specify your server-side environment variables schema here.
     * This way you can ensure the app isn't built with invalid env vars.
     */
-   server: {
-      RESEND_API_KEY: z.string().min(1),
-   },
-
+   server: {},
    /**
     * Specify your client-side environment variables schema here.
     * For them to be exposed to the client, prefix them with `NEXT_PUBLIC_`.
@@ -34,5 +31,5 @@ export const env = createEnv({
       NODE_ENV: process.env.NODE_ENV,
       NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
    },
-   skipValidation: true,
+   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
 })

@@ -31,7 +31,7 @@ COPY --from=builder /app/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
 COPY --from=builder /app/out/full/ .
 COPY turbo.json turbo.json
 RUN pnpm install
-RUN pnpm turbo build --filter=@acme/web...
+RUN SKIP_ENV_VALIDATION=1 pnpm build --filter=@acme/web...
 RUN pnpm db:push
 
 # -------------------------- stage runner ---------------------------------

@@ -9,7 +9,7 @@ app = "acme-turbo"
 primary_region = "fra"
 
 [build]
-dockerfile = "./apps/web/Dockerfile" 
+  dockerfile = "./apps/web/Dockerfile" 
 
 [build.args]
   PROJECT="@acme/web"
