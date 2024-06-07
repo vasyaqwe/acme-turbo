@@ -3,6 +3,7 @@
   "globalDependencies": [
     "**/.env"
   ],
+  "ui": "stream",
   "tasks": {
     "topo": {
       "dependsOn": [

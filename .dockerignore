@@ -1,8 +1,9 @@
+**/node_modules
 node_modules
 **/.next
 .next
-.env
-**/node_modules
-**/README.md
 **/.git
 .git
+**/.env
+.env
+**/README.md
