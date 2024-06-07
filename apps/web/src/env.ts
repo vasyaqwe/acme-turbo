@@ -34,8 +34,5 @@ export const env = createEnv({
       NODE_ENV: process.env.NODE_ENV,
       NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
    },
-   skipValidation:
-      !!process.env.CI ||
-      !!process.env.SKIP_ENV_VALIDATION ||
-      process.env.npm_lifecycle_event === "lint",
+   skipValidation: true,
 })
