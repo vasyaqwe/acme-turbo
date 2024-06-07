@@ -3,7 +3,7 @@
   "globalDependencies": [
     "**/.env"
   ],
-  "pipeline": {
+  "tasks": {
     "topo": {
       "dependsOn": [
         "^topo"
@@ -34,7 +34,7 @@
       "outputs": [
         "node_modules/.cache/.prettiercache"
       ],
-      "outputMode": "new-only"
+      "outputLogs": "new-only"
     },
     "lint": {
       "dependsOn": [
