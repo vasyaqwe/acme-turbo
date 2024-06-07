@@ -12,7 +12,7 @@ primary_region = "fra"
   dockerfile = "./apps/web/Dockerfile" 
 
 [build.args]
-  PROJECT="@acme/web"
+  PROJECT = "@acme/web"
   
 [http_service]
   internal_port = 3000
