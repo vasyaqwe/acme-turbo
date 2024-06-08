@@ -25,7 +25,6 @@ export function Expenses() {
                         } as CSSProperties
                      }
                   >
-                     {" "}
                      {expense.name}
                   </Badge>
                </TableCell>

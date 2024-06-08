@@ -9,7 +9,6 @@ export default async function RootLayout({
    children: React.ReactNode
 }>) {
    const session = await api.user.me().catch((e) => console.error(e))
-   if (!session) redirect("/login")
 
    return (
       <HydrateClient>

@@ -39,8 +39,7 @@ const TableBody = React.forwardRef<
    <tbody
       ref={ref}
       className={cn(
-         `relative before:absolute before:inset-1 before:z-[1] 
-       before:rounded-md before:border before:bg-popover before:shadow-md [&>*]:z-[2]`,
+         `isolate before:absolute before:inset-1 before:top-12 before:z-[-1] before:rounded-md before:border before:bg-popover before:shadow-md`,
          className
       )}
       {...props}
@@ -87,12 +86,7 @@ const TableRow = React.forwardRef<
    <tr
       ref={ref}
       className={cn(
-         ` relative
-         transition-colors before:absolute before:inset-0 before:bottom-0 before:z-[1] before:mx-auto before:h-px before:w-[calc(100%-2.25rem)] before:bg-border first:before:h-0
-          data-[state=selected]:bg-muted
-        [&:first-child>td>div]:mt-1
-        [&:last-child>td>div]:mb-1
-           `,
+         `relative transition-colors before:absolute before:inset-0 before:bottom-0 before:z-[1] before:mx-auto before:h-px before:w-[calc(100%-2.25rem)] before:bg-border first:before:h-0 data-[state=selected]:bg-muted [&:first-child>td>div]:mt-1 [&:last-child>td>div]:mb-1`,
          //        [&:first-child>div]:border-t
          //   [&:first-child>td:first-child>div]:rounded-tl-md
          //   [&:first-child>td:last-child>div]:rounded-tr-md
@@ -118,9 +112,7 @@ const TableCell = React.forwardRef<
    <td
       ref={ref}
       className={cn(
-         `align-middle
-          [&:has([role=checkbox])]:pr-0 
-        [&>[role=checkbox]]:translate-y-[2px]`,
+         `align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]`,
          className
       )}
       {...props}
