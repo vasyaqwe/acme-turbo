@@ -8,6 +8,8 @@ node_modules
 # testing
 coverage
 
+deploy.ps1
+
 # next.js
 .next/
 out/

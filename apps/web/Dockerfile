@@ -27,13 +27,17 @@ COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /app/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
 
+ARG NEXT_PUBLIC_BASE_URL
+ENV NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL}
+ENV DATABASE_URL="$(cat /run/secrets/DATABASE_URL)"
+
 # Build the project
 COPY --from=builder /app/out/full/ .
 COPY turbo.json turbo.json
 RUN pnpm install
-RUN --mount=type=secret,id=NEXT_PUBLIC_BASE_URL \
-    NEXT_PUBLIC_BASE_URL="$(cat /run/secrets/NEXT_PUBLIC_BASE_URL)" \
-    SKIP_ENV_VALIDATION=1 pnpm build --filter=@acme/web...
+RUN --mount=type=secret,id=DATABASE_URL \
+    SKIP_ENV_VALIDATION=1 pnpm build --filter=@acme/web... \
+    && pnpm db:push
 
 # -------------------------- stage runner ---------------------------------
 FROM base AS runner

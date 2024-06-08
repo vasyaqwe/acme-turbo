@@ -13,6 +13,7 @@ primary_region = "ams"
 
 [build.args]
   PROJECT = "@acme/web"
+  NEXT_PUBLIC_BASE_URL = "https://acme-turbo.fly.dev"
   
 [http_service]
   internal_port = 3000
@@ -22,3 +23,8 @@ primary_region = "ams"
   min_machines_running = 1
   max_machines_running = 2 
   processes = ["app"]
+
+[[vm]]
+  memory = '512mb'
+  cpu_kind = 'shared'
+  cpus = 1
