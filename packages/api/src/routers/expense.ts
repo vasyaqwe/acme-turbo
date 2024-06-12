@@ -1,11 +1,9 @@
-import { eq } from "drizzle-orm"
-
 import { expenses, insertExpenseParams } from "@acme/db/schema/expenses"
-
 import { createTRPCRouter, protectedProcedure } from "../trpc"
+import { eq } from "@acme/db"
 
 export const expense = createTRPCRouter({
-   getAll: protectedProcedure.query(async ({ ctx }) => {
+   list: protectedProcedure.query(async ({ ctx }) => {
       const res = await ctx.db
          .select()
          .from(expenses)

@@ -1,7 +1,6 @@
 import { cookies } from "next/headers"
 import { TRPCError } from "@trpc/server"
 import { generateCodeVerifier, generateState } from "arctic"
-import { eq } from "drizzle-orm"
 import { isWithinExpirationDate } from "oslo"
 
 import {
@@ -22,14 +21,16 @@ import { VerificationCodeEmail } from "@acme/emails/emails/verification-code-ema
 
 import {
    createTRPCRouter,
+   protectedProcedure,
    publicProcedure,
    publicRateLimitedProcedure,
 } from "../trpc"
+import { eq } from "@acme/db"
 
 const env = process.env
 
 export const user = createTRPCRouter({
-   me: publicProcedure.query(({ ctx }) => ctx.session?.user),
+   me: protectedProcedure.query(({ ctx }) => ctx.session.user),
    googleLogin: publicProcedure.mutation(async () => {
       const state = generateState()
       const codeVerifier = generateCodeVerifier()

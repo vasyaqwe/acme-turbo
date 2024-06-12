@@ -8,7 +8,7 @@ import { type CSSProperties } from "react"
 import { formatCurrency } from "@/lib/utils"
 
 export function Expenses() {
-   const [expenses] = api.expense.getAll.useSuspenseQuery()
+   const [expenses] = api.expense.list.useSuspenseQuery()
 
    return (
       <>

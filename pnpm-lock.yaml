@@ -36,17 +36,17 @@ importers:
         specifier: 1.6.4
         version: 1.6.4(@babel/runtime@7.24.6)(react-native@0.74.1(@babel/core@7.24.6)(@babel/preset-env@7.24.6(@babel/core@7.24.6))(@types/react@18.3.3)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
       '@tanstack/react-query':
-        specifier: ^5.40.0
-        version: 5.40.0(react@18.3.1)
+        specifier: ^5.45.0
+        version: 5.45.0(react@18.3.1)
       '@trpc/client':
-        specifier: 11.0.0-alpha-tmp-app-router-example.364
-        version: 11.0.0-alpha-tmp-app-router-example.364(@trpc/server@11.0.0-alpha-tmp-app-router-example.364)
+        specifier: 11.0.0-alpha-tmp-app-router-example.388
+        version: 11.0.0-alpha-tmp-app-router-example.388(@trpc/server@11.0.0-alpha-tmp-app-router-example.388)
       '@trpc/react-query':
-        specifier: 11.0.0-alpha-tmp-app-router-example.364
-        version: 11.0.0-alpha-tmp-app-router-example.364(@tanstack/react-query@5.40.0(react@18.3.1))(@trpc/client@11.0.0-alpha-tmp-app-router-example.364(@trpc/server@11.0.0-alpha-tmp-app-router-example.364))(@trpc/server@11.0.0-alpha-tmp-app-router-example.364)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 11.0.0-alpha-tmp-app-router-example.388
+        version: 11.0.0-alpha-tmp-app-router-example.388(@tanstack/react-query@5.45.0(react@18.3.1))(@trpc/client@11.0.0-alpha-tmp-app-router-example.388(@trpc/server@11.0.0-alpha-tmp-app-router-example.388))(@trpc/server@11.0.0-alpha-tmp-app-router-example.388)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@trpc/server':
-        specifier: 11.0.0-alpha-tmp-app-router-example.364
-        version: 11.0.0-alpha-tmp-app-router-example.364
+        specifier: 11.0.0-alpha-tmp-app-router-example.388
+        version: 11.0.0-alpha-tmp-app-router-example.388
       expo:
         specifier: ~51.0.2
         version: 51.0.8(@babel/core@7.24.6)(@babel/preset-env@7.24.6(@babel/core@7.24.6))(bufferutil@4.0.8)
@@ -163,17 +163,17 @@ importers:
         specifier: ^0.10.1
         version: 0.10.1(typescript@5.4.5)(zod@3.23.8)
       '@tanstack/react-query':
-        specifier: ^5.40.0
-        version: 5.40.0(react@18.3.1)
+        specifier: ^5.45.0
+        version: 5.45.0(react@18.3.1)
       '@trpc/client':
-        specifier: 11.0.0-alpha-tmp-app-router-example.364
-        version: 11.0.0-alpha-tmp-app-router-example.364(@trpc/server@11.0.0-alpha-tmp-app-router-example.364)
+        specifier: 11.0.0-alpha-tmp-app-router-example.388
+        version: 11.0.0-alpha-tmp-app-router-example.388(@trpc/server@11.0.0-alpha-tmp-app-router-example.388)
       '@trpc/react-query':
-        specifier: 11.0.0-alpha-tmp-app-router-example.364
-        version: 11.0.0-alpha-tmp-app-router-example.364(@tanstack/react-query@5.40.0(react@18.3.1))(@trpc/client@11.0.0-alpha-tmp-app-router-example.364(@trpc/server@11.0.0-alpha-tmp-app-router-example.364))(@trpc/server@11.0.0-alpha-tmp-app-router-example.364)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 11.0.0-alpha-tmp-app-router-example.388
+        version: 11.0.0-alpha-tmp-app-router-example.388(@tanstack/react-query@5.45.0(react@18.3.1))(@trpc/client@11.0.0-alpha-tmp-app-router-example.388(@trpc/server@11.0.0-alpha-tmp-app-router-example.388))(@trpc/server@11.0.0-alpha-tmp-app-router-example.388)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@trpc/server':
-        specifier: 11.0.0-alpha-tmp-app-router-example.364
-        version: 11.0.0-alpha-tmp-app-router-example.364
+        specifier: 11.0.0-alpha-tmp-app-router-example.388
+        version: 11.0.0-alpha-tmp-app-router-example.388
       framer-motion:
         specifier: ^11.2.6
         version: 11.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -259,12 +259,15 @@ importers:
       '@acme/emails':
         specifier: workspace:*
         version: link:../emails
+      '@js-temporal/polyfill':
+        specifier: ^0.4.4
+        version: 0.4.4
       '@t3-oss/env-core':
         specifier: ^0.10.1
         version: 0.10.1(typescript@5.4.5)(zod@3.23.8)
       '@trpc/server':
-        specifier: 11.0.0-alpha-tmp-app-router-example.364
-        version: 11.0.0-alpha-tmp-app-router-example.364
+        specifier: 11.0.0-alpha-tmp-app-router-example.388
+        version: 11.0.0-alpha-tmp-app-router-example.388
       '@unkey/ratelimit':
         specifier: ^0.1.10
         version: 0.1.10
@@ -412,6 +415,9 @@ importers:
       resend:
         specifier: ^3.2.0
         version: 3.2.0
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@acme/eslint-config':
         specifier: workspace:*
@@ -1890,6 +1896,10 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
+  '@js-temporal/polyfill@0.4.4':
+    resolution: {integrity: sha512-2X6bvghJ/JAoZO52lbgyAPFj8uCflhTo2g7nkFzEQdXd/D8rEeD4HtmTEpmtGCva260fcd66YNXBOYdnmHqSOg==}
+    engines: {node: '>=12'}
+
   '@juggle/resize-observer@3.4.0':
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
 
@@ -2827,33 +2837,33 @@ packages:
       typescript:
         optional: true
 
-  '@tanstack/query-core@5.40.0':
-    resolution: {integrity: sha512-eD8K8jsOIq0Z5u/QbvOmfvKKE/XC39jA7yv4hgpl/1SRiU+J8QCIwgM/mEHuunQsL87dcvnHqSVLmf9pD4CiaA==}
+  '@tanstack/query-core@5.45.0':
+    resolution: {integrity: sha512-RVfIZQmFUTdjhSAAblvueimfngYyfN6HlwaJUPK71PKd7yi43Vs1S/rdimmZedPWX/WGppcq/U1HOj7O7FwYxw==}
 
-  '@tanstack/react-query@5.40.0':
-    resolution: {integrity: sha512-iv/W0Axc4aXhFzkrByToE1JQqayxTPNotCoSCnarR/A1vDIHaoKpg7FTIfP3Ev2mbKn1yrxq0ZKYUdLEJxs6Tg==}
+  '@tanstack/react-query@5.45.0':
+    resolution: {integrity: sha512-y272cKRJp1BvehrWG4ashOBuqBj1Qm2O6fgYJ9LYSHrLdsCXl74GbSVjUQTReUdHuRIl9cEOoyPa6HYag400lw==}
     peerDependencies:
       react: ^18.0.0
 
   '@tootallnate/quickjs-emscripten@0.23.0':
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
 
-  '@trpc/client@11.0.0-alpha-tmp-app-router-example.364':
-    resolution: {integrity: sha512-N08UwuGHW/wVMfF2xy92SDCF/JZ/Bt0+7a2cKaftGPkrLvu1ZW7NH0CUgtT0iktAF0pIOBbQjP7udCTKV86oZQ==}
+  '@trpc/client@11.0.0-alpha-tmp-app-router-example.388':
+    resolution: {integrity: sha512-HIqETAKVub8WKfPKwJVM+LPeakXlRro7cwgHv/B5kY0GwopgOxapNODtlEEFCOsoi5tE5+ylfR/dIuMdtUTldw==}
     peerDependencies:
-      '@trpc/server': 11.0.0-alpha-tmp-app-router-example.364+4d068acf1
+      '@trpc/server': 11.0.0-alpha-tmp-app-router-example.388+2b04d6593
 
-  '@trpc/react-query@11.0.0-alpha-tmp-app-router-example.364':
-    resolution: {integrity: sha512-10wJgDw8VsIE6lXCL7aTFz7nNuSx4FVyTGWopw2+jpEcQ2B9j1l8FBfvE17UL385kna1A9dNPfx/VL//8bEQpg==}
+  '@trpc/react-query@11.0.0-alpha-tmp-app-router-example.388':
+    resolution: {integrity: sha512-4rmYnTs+WLgXqk6BekqAvVCz5vBBuX9jo3iR19bX3jDrFwgHXLDSK2UqRz6dXQITlzhHD3XYpnPOoIeFSIbkxA==}
     peerDependencies:
       '@tanstack/react-query': ^5.40.0
-      '@trpc/client': 11.0.0-alpha-tmp-app-router-example.364+4d068acf1
-      '@trpc/server': 11.0.0-alpha-tmp-app-router-example.364+4d068acf1
+      '@trpc/client': 11.0.0-alpha-tmp-app-router-example.388+2b04d6593
+      '@trpc/server': 11.0.0-alpha-tmp-app-router-example.388+2b04d6593
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
 
-  '@trpc/server@11.0.0-alpha-tmp-app-router-example.364':
-    resolution: {integrity: sha512-AB77IoSTLaqRcuH1LVr6IS2YfZPEY0+Gh7bi2ibpZRbpX3I4J10ACueE3z88G4/j9QJT/ZGSr/Cy0fHrz1pxMQ==}
+  '@trpc/server@11.0.0-alpha-tmp-app-router-example.388':
+    resolution: {integrity: sha512-5qgecG9xCY6mmmf6ojBL+CUZTKRT4JAqvzxLqfkWaWPz/tlklhvmb1Q+NI8TxQgFY0ew3kxvZbo7sC6VTV26Sg==}
 
   '@tsconfig/node10@1.0.11':
     resolution: {integrity: sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw==}
@@ -5092,6 +5102,9 @@ packages:
   js-yaml@4.1.0:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
+
+  jsbi@4.3.0:
+    resolution: {integrity: sha512-SnZNcinB4RIcnEyZqFPdGPVgrg2AcnykiBy0sHVJQKHYeaLUvi3Exj+iaPpLnFVkDPZIV4U0yvgC9/R4uEAZ9g==}
 
   jsbn@1.1.0:
     resolution: {integrity: sha512-4bYVV3aAMtDTTu4+xsDYa6sy9GyJ69/amsu9sYF2zqjiEoZA5xJi3BrfX3uY+/IekIu7MwdObdbDWpoZdBv3/A==}
@@ -9133,6 +9146,11 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
+  '@js-temporal/polyfill@0.4.4':
+    dependencies:
+      jsbi: 4.3.0
+      tslib: 2.6.2
+
   '@juggle/resize-observer@3.4.0': {}
 
   '@lucia-auth/adapter-drizzle@1.0.7(lucia@3.2.0)':
@@ -10229,28 +10247,28 @@ snapshots:
     optionalDependencies:
       typescript: 5.4.5
 
-  '@tanstack/query-core@5.40.0': {}
+  '@tanstack/query-core@5.45.0': {}
 
-  '@tanstack/react-query@5.40.0(react@18.3.1)':
+  '@tanstack/react-query@5.45.0(react@18.3.1)':
     dependencies:
-      '@tanstack/query-core': 5.40.0
+      '@tanstack/query-core': 5.45.0
       react: 18.3.1
 
   '@tootallnate/quickjs-emscripten@0.23.0': {}
 
-  '@trpc/client@11.0.0-alpha-tmp-app-router-example.364(@trpc/server@11.0.0-alpha-tmp-app-router-example.364)':
+  '@trpc/client@11.0.0-alpha-tmp-app-router-example.388(@trpc/server@11.0.0-alpha-tmp-app-router-example.388)':
     dependencies:
-      '@trpc/server': 11.0.0-alpha-tmp-app-router-example.364
+      '@trpc/server': 11.0.0-alpha-tmp-app-router-example.388
 
-  '@trpc/react-query@11.0.0-alpha-tmp-app-router-example.364(@tanstack/react-query@5.40.0(react@18.3.1))(@trpc/client@11.0.0-alpha-tmp-app-router-example.364(@trpc/server@11.0.0-alpha-tmp-app-router-example.364))(@trpc/server@11.0.0-alpha-tmp-app-router-example.364)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@trpc/react-query@11.0.0-alpha-tmp-app-router-example.388(@tanstack/react-query@5.45.0(react@18.3.1))(@trpc/client@11.0.0-alpha-tmp-app-router-example.388(@trpc/server@11.0.0-alpha-tmp-app-router-example.388))(@trpc/server@11.0.0-alpha-tmp-app-router-example.388)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/react-query': 5.40.0(react@18.3.1)
-      '@trpc/client': 11.0.0-alpha-tmp-app-router-example.364(@trpc/server@11.0.0-alpha-tmp-app-router-example.364)
-      '@trpc/server': 11.0.0-alpha-tmp-app-router-example.364
+      '@tanstack/react-query': 5.45.0(react@18.3.1)
+      '@trpc/client': 11.0.0-alpha-tmp-app-router-example.388(@trpc/server@11.0.0-alpha-tmp-app-router-example.388)
+      '@trpc/server': 11.0.0-alpha-tmp-app-router-example.388
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@trpc/server@11.0.0-alpha-tmp-app-router-example.364': {}
+  '@trpc/server@11.0.0-alpha-tmp-app-router-example.388': {}
 
   '@tsconfig/node10@1.0.11': {}
 
@@ -12888,6 +12906,8 @@ snapshots:
   js-yaml@4.1.0:
     dependencies:
       argparse: 2.0.1
+
+  jsbi@4.3.0: {}
 
   jsbn@1.1.0: {}
 

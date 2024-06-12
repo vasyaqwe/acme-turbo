@@ -25,6 +25,8 @@ export const viewport: Viewport = {
       { media: "(prefers-color-scheme: light)", color: "white" },
       { media: "(prefers-color-scheme: dark)", color: "black" },
    ],
+   initialScale: 1,
+   maximumScale: 1,
 }
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })

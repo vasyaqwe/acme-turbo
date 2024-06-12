@@ -16,7 +16,7 @@ import { ErrorBoundary } from "react-error-boundary"
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline"
 
 export default function Page() {
-   void api.expense.getAll().catch((e) => console.error(e))
+   void api.expense.list.prefetch().catch((e) => console.error(e))
 
    return (
       <div className="w-full py-6">

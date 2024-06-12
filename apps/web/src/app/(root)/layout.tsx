@@ -3,6 +3,8 @@ import { ModalProvider } from "@/components/modals"
 import { HydrateClient, api } from "@/trpc/server"
 import { redirect } from "next/navigation"
 
+export const dynamic = "force-dynamic"
+
 export default async function RootLayout({
    children,
 }: Readonly<{

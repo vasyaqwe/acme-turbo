@@ -1,8 +1,7 @@
 import { integer, pgEnum, uuid } from "drizzle-orm/pg-core"
 import { createInsertSchema, createSelectSchema } from "drizzle-zod"
 import { type z } from "zod"
-
-import { users } from "../schema/users"
+import { users } from "./users"
 import { createTable, id, lifecycleDates } from "../utils"
 
 export const expenseNames = [

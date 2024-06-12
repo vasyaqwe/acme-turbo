@@ -2,35 +2,12 @@
 
 import { useState } from "react"
 import { env } from "@/env"
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { type QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { loggerLink, unstable_httpBatchStreamLink } from "@trpc/client"
 import { createTRPCReact } from "@trpc/react-query"
-import SuperJSON from "superjson"
-
 import type { AppRouter } from "@acme/api"
-import { toast } from "@acme/ui/toast"
-
-const createQueryClient = () =>
-   new QueryClient({
-      defaultOptions: {
-         queries: {
-            // With SSR, we usually want to set some default staleTime
-            // above 0 to avoid refetching immediately on the client
-            staleTime: 1000 * 30,
-         },
-         mutations: {
-            onError: (e) => {
-               const error = e as Error & { digest?: string | undefined }
-               //if server action, show generic message
-               if (error.digest) {
-                  toast.error("Something went wrong")
-               } else {
-                  toast.error(e.message)
-               }
-            },
-         },
-      },
-   })
+import { createQueryClient, getUrl } from "@/trpc/shared"
+import { transformer } from "@acme/api/shared"
 
 let clientQueryClientSingleton: QueryClient | undefined = undefined
 const getQueryClient = () => {
@@ -67,8 +44,8 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
                   (op.direction === "down" && op.result instanceof Error),
             }),
             unstable_httpBatchStreamLink({
-               transformer: SuperJSON,
-               url: getBaseUrl() + "/api/trpc",
+               transformer,
+               url: getUrl(),
                headers() {
                   const headers = new Headers()
                   headers.set("x-trpc-source", "nextjs-react")
@@ -89,11 +66,4 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
          </QueryClientProvider>
       </api.Provider>
    )
-}
-
-const getBaseUrl = () => {
-   if (typeof window !== "undefined") return window.location.origin
-   if (env.VERCEL_URL) return `https://${env.VERCEL_URL}`
-   // eslint-disable-next-line no-restricted-properties
-   return `http://localhost:${process.env.PORT ?? 3000}`
 }

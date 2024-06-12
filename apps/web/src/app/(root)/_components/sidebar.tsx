@@ -15,7 +15,6 @@ import { cn } from "@acme/ui"
 export function Sidebar() {
    const pathname = usePathname()
    const [user] = api.user.me.useSuspenseQuery()
-   if (!user) return null
 
    return (
       <aside className="w-72 p-6 max-md:hidden">

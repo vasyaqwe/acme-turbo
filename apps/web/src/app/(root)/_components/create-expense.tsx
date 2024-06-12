@@ -35,7 +35,7 @@ export function CreateExpense() {
    >(expenseNames[0])
 
    return (
-      <Content>
+      <Content className="max-w-md">
          <DialogHeader>
             <DialogTitle>Create Expense</DialogTitle>
          </DialogHeader>
@@ -63,7 +63,7 @@ export function CreateExpense() {
                   setExpenseName(value as (typeof expenseNames)[number])
                }
             >
-               <SelectTrigger className="mt-4 flex w-[230px] capitalize">
+               <SelectTrigger className="mt-4 flex w-full capitalize">
                   {expenseName}
                </SelectTrigger>
                <SelectContent>
