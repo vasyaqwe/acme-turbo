@@ -1,12 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-import { env } from "@/env"
+/* eslint-disable no-restricted-properties */
 import { defaultShouldDehydrateQuery, QueryClient } from "@tanstack/react-query"
 import { toast } from "@acme/ui/toast"
 import { transformer } from "@acme/api/shared"
 
 function getBaseUrl() {
    if (typeof window !== "undefined") return ""
-   if (env.VERCEL_URL) return `https://${env.VERCEL_URL}`
+   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`
    return "http://localhost:3000"
 }
 

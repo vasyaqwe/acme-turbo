@@ -153,6 +153,9 @@ importers:
       '@acme/db':
         specifier: workspace:*
         version: link:../../packages/db
+      '@acme/emails':
+        specifier: workspace:*
+        version: link:../../packages/emails
       '@acme/ui':
         specifier: workspace:*
         version: link:../../packages/ui
