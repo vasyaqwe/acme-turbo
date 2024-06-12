@@ -8,6 +8,10 @@
          "types": "./dist/index.d.ts",
          "default": "./src/index.ts"
       },
+      "./env": {
+         "types": "./dist/env.d.ts",
+         "default": "./src/env.ts"
+      },
       "./shared": {
          "types": "./dist/shared.d.ts",
          "default": "./src/shared.ts"

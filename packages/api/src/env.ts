@@ -8,5 +8,8 @@ export const env = createEnv({
    runtimeEnvStrict: {
       UNKEY_ROOT_KEY: process.env.UNKEY_ROOT_KEY,
    },
-   skipValidation: true,
+   skipValidation:
+      !!process.env.CI ||
+      !!process.env.SKIP_ENV_VALIDATION ||
+      process.env.npm_lifecycle_event === "lint",
 })

@@ -7,7 +7,6 @@ createJiti(fileURLToPath(import.meta.url))("./src/env")
 /** @type {import("next").NextConfig} */
 const config = {
    reactStrictMode: true,
-   output: "standalone",
 
    images: {
       remotePatterns: [

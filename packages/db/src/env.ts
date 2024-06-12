@@ -21,5 +21,8 @@ export const env = createEnv({
       NODE_ENV: process.env.NODE_ENV,
       DATABASE_URL: process.env.DATABASE_URL,
    },
-   skipValidation: true,
+   skipValidation:
+      !!process.env.CI ||
+      !!process.env.SKIP_ENV_VALIDATION ||
+      process.env.npm_lifecycle_event === "lint",
 })

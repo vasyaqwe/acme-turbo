@@ -15,5 +15,8 @@ export const env = createEnv({
    runtimeEnvStrict: {
       RESEND_API_KEY: process.env.RESEND_API_KEY,
    },
-   skipValidation: true,
+   skipValidation:
+      !!process.env.CI ||
+      !!process.env.SKIP_ENV_VALIDATION ||
+      process.env.npm_lifecycle_event === "lint",
 })
