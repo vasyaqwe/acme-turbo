@@ -17,6 +17,7 @@
       "@acme/api": "workspace:*",
       "@acme/auth": "workspace:*",
       "@acme/db": "workspace:*",
+      "@acme/emails": "workspace:*",
       "@acme/ui": "workspace:*",
       "@heroicons/react": "^2.1.3",
       "@t3-oss/env-nextjs": "^0.10.1",
