@@ -27,9 +27,11 @@ COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /app/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
 
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
+
 ARG NEXT_PUBLIC_BASE_URL
-ENV NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL}
-ENV DATABASE_URL="$(cat /run/secrets/DATABASE_URL)"
+ENV NEXT_PUBLIC_BASE_URL=$NEXT_PUBLIC_BASE_URL
 
 # Build the project
 COPY --from=builder /app/out/full/ .
