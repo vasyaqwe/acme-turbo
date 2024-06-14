@@ -6,7 +6,7 @@ import { Toaster } from "@acme/ui/toast"
 import "@/app/globals.css"
 import { env } from "@/env"
 
-export const metadata = {
+export const metadata: Metadata = {
    metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
    title: "Acme Turbo",
    description: "T3 Turborepo template",
