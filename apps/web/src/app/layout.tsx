@@ -1,14 +1,12 @@
 import type { Metadata, Viewport } from "next"
 import { TRPCReactProvider } from "@/trpc/react"
 import { Inter } from "next/font/google"
-
 import { cn } from "@acme/ui"
 import { Toaster } from "@acme/ui/toast"
 import "@/app/globals.css"
-
 import { env } from "@/env"
 
-export const metadata: Metadata = {
+export const metadata = {
    metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
    title: "Acme Turbo",
    description: "T3 Turborepo template",
