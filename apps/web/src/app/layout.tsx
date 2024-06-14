@@ -15,7 +15,7 @@ export const metadata: Metadata = {
    openGraph: {
       title: "Acme Turbo",
       description: "T3 Turborepo template",
-      url: "https://acme-turbo.vercel.app",
+      url: new URL(env.NEXT_PUBLIC_BASE_URL),
       siteName: "Acme Turbo",
    },
 }

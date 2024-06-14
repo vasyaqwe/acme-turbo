@@ -37,8 +37,6 @@
       "@acme/tsconfig": "workspace:*",
       "@acme/db": "workspace:*",
       "@types/react": "^18.3.2",
-      "eslint": "^9.2.0",
-      "prettier": "^3.2.5",
       "react": "18.3.1",
       "tailwindcss": "^3.4.3",
       "typescript": "^5.4.5",
